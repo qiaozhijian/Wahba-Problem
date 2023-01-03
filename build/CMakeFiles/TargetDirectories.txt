@@ -1,0 +1,3 @@
+/home/qzj/code/Wahba-Problem/build/CMakeFiles/edit_cache.dir
+/home/qzj/code/Wahba-Problem/build/CMakeFiles/rebuild_cache.dir
+/home/qzj/code/Wahba-Problem/build/CMakeFiles/shuster_solution.dir
