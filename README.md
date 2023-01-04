@@ -4,6 +4,7 @@ Given a set of unit vectors $\mathbf{v}_i$ and $\mathbf{w}_i$. Find a rotation m
 
 Wahba proposed a solution to this problem in 1962. Rotations are represented by the quaternion, which is subject to fewer constraints than the rotation matrix.
 
+In this repository, I implement the solutions, namely TRIAD and QUEST, proposed by Shuster.
 ## Run
 
 ```bash
@@ -11,4 +12,5 @@ mkdir build
 cd build
 cmake ..
 make
+./shuster_solution
 ```

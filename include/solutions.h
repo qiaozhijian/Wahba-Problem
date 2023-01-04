@@ -10,6 +10,27 @@
 
 namespace shuster{
 
+    Eigen::Matrix3d quest(const Eigen::Matrix3Xd &V, const Eigen::Matrix3Xd &W){
+        Eigen::Matrix3d R;
+        Eigen::Matrix3d B = W * V.transpose();
+        double sigma = B.trace();
+        Eigen::Matrix3d S = B + B.transpose();
+        Eigen::Vector3d Z = Eigen::Vector3d::Zero();
+        for (int i = 0; i < V.cols(); ++i) {
+            Z += W.col(i).cross(V.col(i));
+        }
+        Eigen::Matrix4d T;
+        T.block<3,3>(0,0) = S - sigma * Eigen::Matrix3d::Identity();
+        T.block<3,1>(0,3) = Z;
+        T.block<1,3>(3,0) = Z.transpose();
+        T(3,3) = sigma;
+        Eigen::SelfAdjointEigenSolver<Eigen::Matrix4d> es(T);
+        Eigen::Vector4d q = es.eigenvectors().col(3);
+        Eigen::Quaterniond Q(q(3), q(0), q(1), q(2));
+        R = Q.toRotationMatrix();
+        return R;
+    }
+
     Eigen::Matrix3d triad(Eigen::Vector3d v1, Eigen::Vector3d v2,
                           Eigen::Vector3d w1, Eigen::Vector3d w2){
         // Rv=w, only accommodate two vectors
