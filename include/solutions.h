@@ -31,6 +31,16 @@ namespace shuster{
         return R;
     }
 
+    Eigen::Matrix3d pseduoSolveRot(const Eigen::Matrix3Xd& src, const Eigen::Matrix3Xd& dst){
+        // tgt = R * src
+        // tgt * src^T = R * src * src^T
+        // R = tgt * src^T * (src * src^T)^-1
+        Eigen::Matrix3d R;
+        Eigen::Matrix3d src_cov = src * src.transpose();
+        R = dst * src.transpose() * src_cov.inverse();
+        return R;
+    }
+
     Eigen::Matrix3d triad(Eigen::Vector3d v1, Eigen::Vector3d v2,
                           Eigen::Vector3d w1, Eigen::Vector3d w2){
         // Rv=w, only accommodate two vectors

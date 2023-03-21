@@ -37,4 +37,8 @@ inline Eigen::Matrix3d random_rotation_matrix() {
     return R;
 }
 
+inline double getAngularError(Eigen::Matrix3d R_exp, Eigen::Matrix3d R_est) {
+    return std::abs(std::acos(fmin(fmax(((R_exp.transpose() * R_est).trace() - 1) / 2, -1.0), 1.0))) * 180 / M_PI;
+}
+
 #endif //CMAKE_TEMPLATE_UTILS_H
