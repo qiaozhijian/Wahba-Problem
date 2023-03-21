@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -march=native -O3 -DNDEBUG CMakeFiles/shuster_solution.dir/node/shuster_solution.cpp.o -o shuster_solution 

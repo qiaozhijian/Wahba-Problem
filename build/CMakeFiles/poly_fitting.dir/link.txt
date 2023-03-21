@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -march=native -O3 -DNDEBUG CMakeFiles/poly_fitting.dir/node/poly_fitting.cpp.o -o poly_fitting 
