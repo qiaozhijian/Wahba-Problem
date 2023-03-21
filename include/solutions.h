@@ -27,7 +27,7 @@ namespace shuster{
         Eigen::SelfAdjointEigenSolver<Eigen::Matrix4d> es(T);
         Eigen::Vector4d q = es.eigenvectors().col(3);
         Eigen::Quaterniond Q(q(3), q(0), q(1), q(2));
-        R = Q.toRotationMatrix();
+        R = Q.toRotationMatrix().transpose();
         return R;
     }
 

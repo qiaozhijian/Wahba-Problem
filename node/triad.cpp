@@ -27,6 +27,5 @@ int main(int argc, char **argv) {
     Eigen::Matrix3d R_quest = shuster::quest(V, W);
     std::cout << "R = " << std::endl << R << std::endl;
     std::cout << "R_quest = " << std::endl << R_quest << std::endl;
-    std::cout << "I don't know why R_quest is the transpose of R." << std::endl;
     return 0;
 }

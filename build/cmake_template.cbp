@@ -5,13 +5,157 @@
 		<Option title="cmake_template"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\usr\lib\cmake\eigen3\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\usr\lib\cmake\eigen3\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\Modules\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/qzj/code/Wahba-Problem/build"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triad">
+				<Option output="/home/qzj/code/Wahba-Problem/build/triad" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/qzj/code/Wahba-Problem/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-Dqh_QHpointer"/>
+					<Add option="-DDISABLE_PCAP"/>
+					<Add option="-DDISABLE_PNG"/>
+					<Add option="-DDISABLE_LIBUSB_1_0"/>
+					<Add directory="/home/qzj/code/Wahba-Problem"/>
+					<Add directory="/home/qzj/code/Wahba-Problem/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/include/pcl-1.10"/>
+					<Add directory="/usr/include/ni"/>
+					<Add directory="/usr/include/openni2"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 triad"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="triad/fast">
+				<Option output="/home/qzj/code/Wahba-Problem/build/triad" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/qzj/code/Wahba-Problem/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-Dqh_QHpointer"/>
+					<Add option="-DDISABLE_PCAP"/>
+					<Add option="-DDISABLE_PNG"/>
+					<Add option="-DDISABLE_LIBUSB_1_0"/>
+					<Add directory="/home/qzj/code/Wahba-Problem"/>
+					<Add directory="/home/qzj/code/Wahba-Problem/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/include/pcl-1.10"/>
+					<Add directory="/usr/include/ni"/>
+					<Add directory="/usr/include/openni2"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 triad/fast"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bun_test">
+				<Option output="/home/qzj/code/Wahba-Problem/build/bun_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/qzj/code/Wahba-Problem/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-Dqh_QHpointer"/>
+					<Add option="-DDISABLE_PCAP"/>
+					<Add option="-DDISABLE_PNG"/>
+					<Add option="-DDISABLE_LIBUSB_1_0"/>
+					<Add directory="/home/qzj/code/Wahba-Problem"/>
+					<Add directory="/home/qzj/code/Wahba-Problem/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/include/pcl-1.10"/>
+					<Add directory="/usr/include/ni"/>
+					<Add directory="/usr/include/openni2"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 bun_test"/>
+					<CompileFile command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bun_test/fast">
+				<Option output="/home/qzj/code/Wahba-Problem/build/bun_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/qzj/code/Wahba-Problem/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-Dqh_QHpointer"/>
+					<Add option="-DDISABLE_PCAP"/>
+					<Add option="-DDISABLE_PNG"/>
+					<Add option="-DDISABLE_LIBUSB_1_0"/>
+					<Add directory="/home/qzj/code/Wahba-Problem"/>
+					<Add directory="/home/qzj/code/Wahba-Problem/include"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/vtk-7.1"/>
+					<Add directory="/usr/include/freetype2"/>
+					<Add directory="/usr/include/pcl-1.10"/>
+					<Add directory="/usr/include/ni"/>
+					<Add directory="/usr/include/openni2"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 bun_test/fast"/>
 					<CompileFile command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
@@ -37,64 +181,20 @@
 					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="shuster_solution">
-				<Option output="/home/qzj/code/Wahba-Problem/build/shuster_solution" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/qzj/code/Wahba-Problem/build"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/qzj/code/Wahba-Problem"/>
-					<Add directory="/home/qzj/code/Wahba-Problem/include"/>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 shuster_solution"/>
-					<CompileFile command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="shuster_solution/fast">
-				<Option output="/home/qzj/code/Wahba-Problem/build/shuster_solution" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/qzj/code/Wahba-Problem/build"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/qzj/code/Wahba-Problem"/>
-					<Add directory="/home/qzj/code/Wahba-Problem/include"/>
-					<Add directory="/usr/include/eigen3"/>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 shuster_solution/fast"/>
-					<CompileFile command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j24 -f &quot;/home/qzj/code/Wahba-Problem/build/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 		</Build>
-		<Unit filename="/home/qzj/code/Wahba-Problem/node/shuster_solution.cpp">
-			<Option target="shuster_solution"/>
+		<Unit filename="/home/qzj/code/Wahba-Problem/node/bun_test.cpp">
+			<Option target="bun_test"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/node/triad.cpp">
+			<Option target="triad"/>
 		</Unit>
 		<Unit filename="/home/qzj/code/Wahba-Problem/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/qzj/code/Wahba-Problem/cmake/eigen.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/cmake/pcl.cmake">
 			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
 		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/eigen3/Eigen3Config.cmake">
@@ -105,6 +205,216 @@
 		</Unit>
 		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/eigen3/Eigen3Targets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\eigen3\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/VTKTargets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/VTKTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkChartsCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonColor.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonComputationalGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonDataModel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonExecutionModel.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonMath.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonMisc.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonSystem.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkCommonTransforms.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkDICOMParser.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersExtraction.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersGeneral.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersHybrid.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersModeling.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersSources.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkFiltersStatistics.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOGeometry.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOImage.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOLegacy.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOPLY.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOXML.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkIOXMLParser.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingColor.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingFourier.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingGeneral.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingHybrid.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkImagingSources.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkInfovisCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkInteractionStyle.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkInteractionWidgets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkMetaIO.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingAnnotation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingContext2D.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingContextOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingFreeType.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingLOD.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingOpenGL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkRenderingVolume.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkUtilitiesEncodeString.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkViewsContext2D.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkViewsCore.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkalglib.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkexpat.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkfreetype.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkglew.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkjpeg.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkkwiml.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkpng.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtksys.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtktiff.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/cmake/vtk-7.1/Modules/vtkzlib.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\cmake\vtk-7.1\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/x86_64-linux-gnu/cmake/pcl/Modules/FindEigen.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/x86_64-linux-gnu/cmake/pcl/Modules/FindFLANN.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/x86_64-linux-gnu/cmake/pcl/Modules/FindOpenNI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/x86_64-linux-gnu/cmake/pcl/Modules/FindOpenNI2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\Modules\"/>
+		</Unit>
+		<Unit filename="/home/qzj/code/Wahba-Problem/../../../../usr/lib/x86_64-linux-gnu/cmake/pcl/Modules/FindQhull.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\pcl\Modules\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

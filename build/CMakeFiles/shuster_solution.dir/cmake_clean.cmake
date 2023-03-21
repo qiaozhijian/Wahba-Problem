@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/shuster_solution.dir/node/shuster_solution.cpp.o"
+  "CMakeFiles/shuster_solution.dir/node/shuster_solution.cpp.o.d"
   "shuster_solution"
   "shuster_solution.pdb"
 )

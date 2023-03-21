@@ -14,8 +14,12 @@ include_directories(
 )
 
 include(cmake/eigen.cmake)
-file(GLOB_RECURSE ALL_SRCS "src/*.cpp")
+include(cmake/pcl.cmake)
+file(GLOB_RECURSE ALL_SRCS "src/*.c*")
 
-add_executable(shuster_solution node/shuster_solution.cpp ${ALL_SRCS})
-target_link_libraries(shuster_solution ${ALL_TARGET_LIBRARIES})
+add_executable(triad node/triad.cpp ${ALL_SRCS})
+target_link_libraries(triad ${ALL_TARGET_LIBRARIES})
+
+add_executable(bun_test node/bun_test.cpp ${ALL_SRCS})
+target_link_libraries(bun_test ${ALL_TARGET_LIBRARIES})
 

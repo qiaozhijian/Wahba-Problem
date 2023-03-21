@@ -1,3 +1,4 @@
+/home/qzj/code/Wahba-Problem/build/CMakeFiles/triad.dir
+/home/qzj/code/Wahba-Problem/build/CMakeFiles/bun_test.dir
 /home/qzj/code/Wahba-Problem/build/CMakeFiles/edit_cache.dir
 /home/qzj/code/Wahba-Problem/build/CMakeFiles/rebuild_cache.dir
-/home/qzj/code/Wahba-Problem/build/CMakeFiles/shuster_solution.dir
