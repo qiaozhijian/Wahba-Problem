@@ -23,6 +23,12 @@ inline Eigen::Vector3d random_unit_vector() {
     return v;
 }
 
+inline Eigen::Vector3d add_noise(Eigen::Vector3d v, double std) {
+    Eigen::Vector3d noise;
+    noise << random_normal(std), random_normal(std), random_normal(std);
+    return (v + noise).normalized();
+}
+
 inline Eigen::Quaterniond random_unit_quaternion() {
     Eigen::Quaterniond q;
     q.w() = random_normal(1);
@@ -35,6 +41,19 @@ inline Eigen::Matrix3d random_rotation_matrix() {
     Eigen::Quaterniond q = random_unit_quaternion();
     Eigen::Matrix3d R = q.toRotationMatrix();
     return R;
+}
+
+inline Eigen::Matrix<double, 3, Eigen::Dynamic> RandomSample(Eigen::Matrix<double, 3, Eigen::Dynamic> &src, int sample_num) {
+    Eigen::PermutationMatrix<3> perm(3);
+    perm.setIdentity();
+    std::random_shuffle(perm.indices().data(), perm.indices().data() + perm.indices().size());
+    src = perm * src;
+
+    Eigen::Matrix<double, 3, Eigen::Dynamic> src_sample(3, sample_num);
+    for (size_t i = 0; i < sample_num; ++i) {
+        src_sample.col(i) = src.col(i);
+    }
+    return src_sample;
 }
 
 inline double getAngularError(Eigen::Matrix3d R_exp, Eigen::Matrix3d R_est) {

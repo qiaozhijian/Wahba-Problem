@@ -25,19 +25,10 @@ namespace shuster{
         T.block<1,3>(3,0) = Z.transpose();
         T(3,3) = sigma;
         Eigen::SelfAdjointEigenSolver<Eigen::Matrix4d> es(T);
+        //std::cout << "QUEST: the determinant of T is " << T.determinant() << ", the eigenvalues are " << es.eigenvalues().transpose() << std::endl;
         Eigen::Vector4d q = es.eigenvectors().col(3);
         Eigen::Quaterniond Q(q(3), q(0), q(1), q(2));
         R = Q.toRotationMatrix().transpose();
-        return R;
-    }
-
-    Eigen::Matrix3d pseduoSolveRot(const Eigen::Matrix3Xd& src, const Eigen::Matrix3Xd& dst){
-        // tgt = R * src
-        // tgt * src^T = R * src * src^T
-        // R = tgt * src^T * (src * src^T)^-1
-        Eigen::Matrix3d R;
-        Eigen::Matrix3d src_cov = src * src.transpose();
-        R = dst * src.transpose() * src_cov.inverse();
         return R;
     }
 
@@ -60,6 +51,35 @@ namespace shuster{
         return R;
     }
 
+}
+
+namespace procrustes{
+
+
+    Eigen::Matrix3d pseduoSolveRot(const Eigen::Matrix3Xd& src, const Eigen::Matrix3Xd& dst){
+        // tgt = R * src
+        // tgt * src^T = R * src * src^T
+        // R = tgt * src^T * (src * src^T)^-1
+        Eigen::Matrix3d R;
+        Eigen::Matrix3d src_cov = src * src.transpose();
+        //std::cout << "PSEUDO: the determinant of src_cov is " << src_cov.determinant() << std::endl;
+        R = dst * src.transpose() * src_cov.inverse();
+        return R;
+    }
+
+    Eigen::Matrix3d SVDSolveRot(const Eigen::Matrix3Xd& src, const Eigen::Matrix3Xd& dst){
+        Eigen::Matrix3d R;
+        Eigen::Matrix3d W = dst * src.transpose();
+        Eigen::JacobiSVD<Eigen::MatrixXd> svd(W, Eigen::ComputeFullU | Eigen::ComputeFullV);
+        R = svd.matrixU() * svd.matrixV().transpose();
+        //std::cout << "SVD: the determinant of W is " << W.determinant() << ", singular values are " << svd.singularValues().transpose() << std::endl;
+        if (R.determinant() < 0){
+            Eigen::Matrix3d V = svd.matrixV();
+            V.col(2) = -V.col(2);
+            R = svd.matrixU() * V.transpose();
+        }
+        return R;
+    }
 }
 
 #endif //CMAKE_TEMPLATE_SOLUTIONS_H
